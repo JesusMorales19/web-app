@@ -5,14 +5,11 @@ import cors from "cors"
 
 const app = express();
 app.use(cors({
-    origin:"https://appweb-4b72b.web.app/"
+    origin:"*"
 }));
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.get("/", (_, res)=>{
-    res.send("Hola")
-})
 
 app.use("/api", authRoute);
 export default app;
